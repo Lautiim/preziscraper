@@ -8,6 +8,7 @@ if("im" in argv) input = argv.im;
 if("out" in argv) output = argv.out;
 
 fs = require('fs');
+const path = require('path');
 doc = new PDFDocument({
     autoFirstPage: false
 });
