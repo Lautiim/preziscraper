@@ -34,11 +34,8 @@ fs.readdir(input, function (err, files) {
     for(var i in x){
         console.log(`writing Image #${i} to pdf`);
         var img = doc.openImage(`${input}/prezi-${i}.png`);
-        doc.addPage()
-            .image(`${input}/prezi-${i}.png`, {
-            fit: [img.width, img.height]
-        });
-        doc.image(img, 0, 0);
+        doc.addPage({size: [img.width, img.height]});
+        doc.image(img, 0, 0, {width: img.width, height: img.height});
     }
 
     console.log("saving to",output);
