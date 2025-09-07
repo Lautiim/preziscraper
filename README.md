@@ -84,9 +84,11 @@ When running in headless mode, the script may not enter full screen. If you want
 
 ---
 
+```
 Love from Argentina!
+
     /\_/\
    ( o.o )
     > ^ <
-  🇦🇷🇦🇷🇦🇷🇦🇷
--+-+-+-+-+-+-+-+-+-+
+   🇦🇷🇦🇷🇦🇷🇦🇷
+```
