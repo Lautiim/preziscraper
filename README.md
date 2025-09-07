@@ -25,7 +25,7 @@ npm install
 
 ## Using this tool
 
-Currently, the tool is split into two scripts. `[preziscraper.js](preziscraper.js)` contains the scraper, while `[imgtopdf.js](imgtopdf.js)` contains the pdf creation tool, to make a pdf out of the scraped Prezi slides.
+Currently, the tool is split into two scripts. [`preziscraper.js`](preziscraper.js) contains the scraper, while [`imgtopdf.js`](imgtopdf.js) contains the pdf creation tool, to make a pdf out of the scraped Prezi slides.
 
 If I find the time, I will merge them into one script.
 
