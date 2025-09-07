@@ -20,29 +20,29 @@ doc.pipe(fs.createWriteStream(output));
 console.log("Creating pdf",output);
 
 fs.readdir(input, function (err, files) {
-    //handling error
+    // Manejo de errores
     if (err) {
-        return console.log('Unable to scan directory: ' + err);
+        return console.log('No se puede escanear el directorio: ' + err);
     } 
-    //listing all files using forEach
+    // Listando todos los archivos usando forEach
     files.forEach(function (file) {
-        // Do whatever you want to do with the file
+        // Haz lo que quieras con el archivo
         imgs.push(file.substring(6).replace(".png",""));
     });
     x = imgs.sort(function(a, b) {
         return a - b;
     });
     for(var i in x){
-        console.log(`writing Image #${i} to pdf`);
+        console.log(`escribiendo Imagen #${i} al pdf`);
         var img = doc.openImage(`${input}/prezi-${i}.png`);
         doc.addPage({size: [img.width, img.height]});
         doc.image(img, 0, 0, {width: img.width, height: img.height});
     }
 
-    console.log("saving to",output);
+    console.log("guardando en",output);
     doc.end();
     
-    // delete files if wished
+    // borrar archivos si se desea
     if("del" in argv){
         fs.readdir(input, (err, files) => {
             if (err) throw err;
@@ -54,3 +54,4 @@ fs.readdir(input, function (err, files) {
         });
     }
 });
+
