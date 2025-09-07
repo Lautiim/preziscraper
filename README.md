@@ -50,6 +50,7 @@ node preziscraper.js --url [PREZI_URL] --pdf
 - `--out` to set the output folder for images (default: `img` in the repo folder)
 - `--chromePath` to set the path to the Chrome executable [default: `C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe` for windows and `/usr/bin/google-chrome` for everything else]
 - `--pdf` to automatically generate the PDF after downloading the images. The PDF will be created as `prezi.pdf` in the repo folder.
+- `--del` to automatically delete all scraped images after the PDF is created (when used together with `--pdf`)
 
 ### Example
 

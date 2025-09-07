@@ -118,14 +118,13 @@ const breaker = ".viewer-common-info-overlay-button-label"; // Selector para un 
     // Ejecuta el script para crear el PDF automáticamente si el flag --pdf está presente
     if (argv.pdf) {
         const { exec } = require('child_process');
-        /**
-         * @file Define la ruta al script imgtopdf.js.
-         * @const {string} pdfScript - La ruta absoluta al script imgtopdf.js,
-         * utilizada para convertir imágenes a formato PDF. Esta ruta se construye uniendo
-         * el directorio del módulo actual (__dirname) con el nombre de archivo 'imgtopdf.js'.
-         */
         const pdfScript = path.join(__dirname, 'imgtopdf.js');
-        exec(`node "${pdfScript}" --in "${out}" --out "${path.join(__dirname, 'prezi.pdf')}"`, (error, stdout, stderr) => {
+        // Construye el comando con --del si se pasa la flag
+        let cmd = `node "${pdfScript}" --in "${out}" --out "${path.join(__dirname, 'prezi.pdf')}"`;
+        if (argv.del) {
+            cmd += " --del";
+        }
+        exec(cmd, (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error al crear el PDF: ${error.message}`);
                 return;
